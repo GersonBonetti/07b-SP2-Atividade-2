@@ -1,0 +1,1007 @@
+@import url('https://fonts.googleapis.com/css2?family=Suwannaphum&display=swap');
+/* esse import é pela fonte utilizada na navbar. Professor
+disse que geralmente ela é posta na primira linha do CSS */
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* O '*' é um seletor que seleciona todos os elementos dos HTML. 
+Nessa situaçao, ele está resetando algumas configurações do HTML.
+    'Margin' é para zerar as margens da página, para não ficar aquela
+faixa branca.
+    'Padding' é uma 'borda interna', que define a distância do
+conteúdo em relação a borda.
+    'Box-sizing' é a medida de um elemento*/
+
+header {
+    background-color: #E6E8FF;
+}
+/* Esse 'header' na verdade é um seletor de tag. Isso significa
+que ele pega todas as tags da página destino que contenham,
+nesse caso, a tag 'header, e aplica esse estilo para elas.
+Se a tag fosse 'a', ele aplicaria em todos os 'a', e assim por
+diante.*/
+
+.sup {
+    height: 135px;
+    border-bottom-width: 3px;
+    border-bottom-style: solid;
+    border-bottom-color: black;
+}
+
+.inf {
+    height: 85px;
+}
+/* sup e inf sao para definir a altura de cada container 
+dentro do header */
+
+.posicionamento-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/*  Essa classe 'posicionamento-header' foi posta também lá no div
+do header, no HTML. Ela muda o posicionamento dos elementos no header.
+Antes, a logo, a searchbar e o login estavam um em cima
+do outro. Agora, estão um ao lado do outro, pois foi utilizado o
+'space-between'. O 'display: flex' serve para deixar em flexbox
+O align-items e para centralizar os elementos verticalmente.
+ */
+
+.posicionamento-navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.menu a {
+    color:black;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Suwannaphum', serif;
+    font-size: 30px;
+}
+
+/* AREA PARA MENU HAMBURGUER */
+
+.menu-toggle-button {
+    height: 90px;
+    line-height: 90px !important;
+    font-size: 26px;
+    display: none !important;
+    cursor: pointer;
+}
+
+.navigation-menu {
+    position: fixed;
+    width: 100%;
+    height: 300px;
+    max-width: 100vw;
+    background: #11112C;
+    display: none
+}
+
+
+
+/* AREA PARA MENU HAMBURGUER */
+
+
+
+/* Aqui e especificado que, para a classe 'menu', os
+elemento que serao editados por esse codigo sao os 'a'
+Alem disso, a cor da fonte dessa classe e definida por 'color',
+e a decoracao do texto (sublinhado, por exemplo) e definida
+como 'none' (nenhuma)
+O text-transform e para mudar o estilo da letra, como tudo maiusculo
+(uppercase), tudo minusculo (lowercase), capitalize (deixa a primeira
+letra de cada palavra em maiusculo)*/
+
+.banner {
+    background-image: url(../Imagens/Background-banner.red.png);
+    height: 818px;
+    background-repeat: no-repeat;
+    background-size: cover; 
+}   
+
+
+/* O 'backgorund-image' é usado para definir a imagem de fundo.
+A url é o diretório do arquivo que será usado. 
+Na url, foi usado o "../", pois quando se usa o control + espaço
+o programa procura pela pasta onde está o arquivo css. No entanto,
+o arquivo css está em uma pasta diferete da pasta iamgens, que era
+onde estavam sendo salvas as imagens. Por isso os dois pontos: eles
+'sobem' uma pasta dentro do diretório e acessam outra, nesse caso,
+a de imagens, e então sim vão para a imagem selecionada. Podem ser
+usados mais '../' para retornar ainda mais pastas.*/
+/* Depois de fazer todo esse processo para colocar a imagem como de fundo,
+a imagem em si ainda não aparece, pois a div, nesse momento, não
+tem conteúdo, e por isso não há background: pois não há o que mostrar.
+Por esse motivo é que devemos de coloar o 'height': para que
+ele comece a mostrar pelo menos o background*/
+/* Quando o back começa a aparecer, ele fica com várias repetições.
+Isso é normal do código. Para retirar isso, foi usado o
+'background-repeat: no-repeat'*/
+/* O 'background-size' define o tamanho do mesmo; 'cover'
+é para cobrir toda a extensão. Dessa maneira, não ficam espaços
+sobrando nas laterias do back (apesar de que meu back já estava ajustado)*/
+
+.itens-banner {
+    height: 100%;
+    text-align: center; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.container-banner {
+    width: 95%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+/* 'justify-content' funciona para alinhamento horizontal,
+enquanto 'align-items' para alinhamento vertical */
+/* o height em 100% é para que essa classe tenha 100%
+do tamanho da class banner, na div pai */
+
+.texto-banner {
+    width: 519px;
+    color: white;
+    text-decoration: none;
+}
+/* width é a largura do texto no figma */
+
+.texto-discover {
+    text-decoration: none;
+    text-transform: none;
+    font-family: 'Lato', sans-serif;
+    font-size: 50px;
+}
+
+.texto-meio {
+    text-decoration: none;
+    text-transform: none;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 35px;
+}
+
+.texto-link a {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Lato', sans-serif;
+    font-size: 35px; 
+}
+/* Aqui eu tive que especificar que era o elemento 'a', um link,
+que teria seu estilo mudado, pois não ia de jeito nenhum */
+
+.back-destaque {
+    height: 123px;
+    background-color: #BDBDBD;
+    text-transform: uppercase;
+    color: black;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 40px;
+    text-align: center;
+}
+
+.txt-destaque-grid {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.txt-destaque-grid p {
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+}
+
+.estilo-destaque {
+    border-top-color: black;
+    border-top-width: 3px;
+    border-top-style: solid;
+    border-bottom-color: black;
+    border-bottom-width: 3px;
+    border-bottom-style: solid;
+}
+
+.back-destaque-up {
+    height: 600px;
+    background-color: #E6E8FF;
+}
+
+.back-destaque-down {
+    height: 1170px;
+    background-color: #E6E8FF;
+}
+
+.jogos {
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    column-gap: 80px;
+}
+
+.jogos img {
+    width: 270px;
+    height: 400px;
+}
+
+.bg-footer {
+    background-color: #11112C;
+    height: 800px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.container-footer {
+    width: 95%;
+    height: 700px;
+    display: flex;
+    justify-content: space-around;
+    align-content: space-around;
+    flex-direction: column;
+}
+
+.container-footer-up {
+    width: 100%;
+    height: 356px;
+    display: flex;
+    align-content: space-around;
+    
+}
+
+.container-redes {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    
+}
+
+.container-links {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.links-footer a {
+    color:white;
+    text-decoration: none;
+    font-family: 'Lato', sans-serif;
+    font-size: 48px;
+}
+
+.fim-footer {
+    color: white;
+    text-align: center;
+    line-height: 16px;
+    padding-left: 0px;
+}
+
+.fim-footer a {
+    color:white;
+    text-decoration: none;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+}
+
+.separador-first {
+    padding-right: 0.6em;
+}
+
+.separador {
+    border-left: 1px solid #999;
+    padding: 0.6em;
+}
+
+.separador:nth-child(4) {
+    padding-top: 0px;
+    padding-bottom: 0px;
+   }
+
+a.separador:nth-child(5) {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}  
+
+.fim-footer > p:nth-child(7) {
+    padding-top: 16px;
+}
+
+.container-copy {
+    width: 100%;
+    height: 166px;
+}
+
+a.separador {
+    padding-top: 0px;
+    padding-bottom: 0px;
+} 
+
+#divBusca {
+    background-color: #FFFFFF;
+    border: solid 3px;
+    border-radius: 30px;
+    width: 400px;
+    height: 40px;
+}
+
+#txtBusca {
+    float: left;
+    background-color: transparent;
+    padding-left: 5px;
+    font-style: italic;
+    font-size: 18px;
+    border: none;
+    height: 32px;
+    width: 366px;
+}
+
+#btnBusca {
+   width: 20px;
+   height: 20px;
+}
+
+input, textarea, select {
+    outline: 0;
+}
+
+
+/* ----------------INÍCIO MEDIA QUERIES----------------*/
+
+
+/* Dispositivos extra pequenos (celulares menores que 576px) */
+@media (max-width: 575.98px) {
+
+    .sup {
+        height: 55px;
+        border-bottom-width: none;
+        border-bottom-style: none;
+        border-bottom-color: none;
+    }
+
+    .login-tablet {
+        display: none;
+    }
+
+    .login-desktop {
+        display: none;
+    }
+
+    .logo-tablet {
+        display: none;
+    }
+
+    .logo-desktop { 
+        display: none;
+    }
+
+    .barra-de-busca {
+        display: none;
+    }
+
+    .posicionamento-navbar{
+        display: none;
+    }
+
+    .logo-celular {
+        max-width: 80%;
+        height: auto;
+    }
+
+    .navigation-menu {
+        display: block;
+    }
+
+    .menu-toggle-button {
+        display: block !important;
+    }
+
+    .posicionamento-header {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    label.menu-hamburguer {
+        padding-bottom: 30px;
+    }
+    
+    .banner {
+        background-image: url(../Imagens/Imagem\ Tocha-tablet.png);
+        width: 100%;
+        height: 290px;
+        background-repeat: no-repeat;
+        background-size: cover; 
+    }
+
+    .container-banner {
+        align-items: center;
+    }
+
+    .texto-banner {
+        width: 95%;
+    }
+
+    .texto-discover h1 {
+        font-size: 20px;
+    }
+    
+    .texto-meio p {
+        font-size: 16px;
+    }
+    
+    .texto-link a {
+        font-size: 16px; 
+    }
+
+     .back-destaque-up {
+        height: 892px;
+    }
+
+    .jogos {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+    .jogos img {
+        width: 185px;
+        height: 240px;
+    }
+
+    .back-destaque {
+        height: 37px;
+        font-size: 14px;
+    }
+
+    .back-destaque-down {
+        height: 1741px;
+    }
+
+    .disappear-celular {
+        display: none;
+    }
+
+    .disappear {
+        display: none;
+    }
+
+    .container-resp {
+        width: 100%;
+        height: 50%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .texto-footer a {
+        color: white;
+        text-decoration: none;
+        font-family: 'Lato', sans-serif;
+        font-size: 16px;
+    }
+
+    .texto-footer p {
+        color: white;
+        text-decoration: none;
+        font-family: 'Lato', sans-serif;
+        font-size: 16px;
+    }
+
+    .container-redes {
+        display: none;
+    }
+
+    .container-links {
+        display: none;
+    }
+
+    .container-footer {
+        justify-content: space-between;
+        height: 500px;
+    }
+
+    .container-footer-meio-esquerda {
+        width: 51%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container-footer-meio-direita {
+        display: none;
+    }
+
+    .container-footer-meio-up-direita {
+        width: 50%;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .resize-mobile img {
+        width: 25px;
+        height: 25px;
+    }
+    
+    .fim-footer a {
+      font-size: 12px;
+    }
+    
+    .fim-footer p {
+        font-size: 12px;
+      }
+
+    .bg-footer {
+        height: 550px;
+    }
+
+    .container-footer-up {
+        height: 250px;
+    }
+
+    a.separador:nth-child(7) {
+        padding-bottom: 0px;
+        padding-top: 0px;
+        border: none;
+       }
+
+    a.separador:nth-child(6) {
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }      
+
+    a.separador:nth-child(8) {
+        border-left-width: 0px;
+    }
+
+    a.separador:nth-child(9) {
+        padding-top: 0px;
+        padding-bottom: 0px;
+        border-left-width: 1px;
+    }
+}
+
+/* Dispositivos pequenos (celulares modo paisagem, 576px e acima) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+
+    .sup {
+        height: 110px;
+        border-bottom-width: none;
+        border-bottom-style: none;
+        border-bottom-color: none;
+    }
+
+    .login-desktop {
+        display: none;
+    }
+
+    .logo-celular {
+        display: none;
+    }
+
+    .logo-desktop {
+        display: none;
+    }
+
+    .barra-de-busca {
+        display: none;
+    }
+
+    .posicionamento-navbar{
+        display: none;
+    } 
+
+    .login-celular {
+        display: none;
+    }
+
+    .menu-ativo {
+        display: block !important;
+    }
+
+    .navigation-menu {
+        display: block;
+    }
+
+    .menu-de-navegação {
+        position: fixed;
+        width: 100%;
+        max-width: 400px;
+        background: #11112C;
+        top: 90px;
+        right: 0;
+    }
+    
+    .banner {
+        background-image: url(../Imagens/Imagem\ Tocha-tablet.png);
+        width: 100%;
+        height: 505px;
+        background-repeat: no-repeat;
+        background-size: cover; 
+    }
+
+    .container-banner {
+        align-items: center;
+    }
+    
+    .texto-discover h1 {
+        font-size: 36px;
+    }
+    
+    .texto-meio p {
+        font-size: 27px;
+    }
+    
+    .texto-link a {
+        font-size: 27px; 
+    }
+   
+    .back-destaque-up {
+        height: 300px;
+    }
+
+    .jogos img {
+        width: 118px;
+        height: 202px;
+    }
+
+    .back-destaque {
+        height: 45px;
+        font-size: 20px;
+    }
+
+    .back-destaque-down {
+        height: 550px;
+        background-color: #E6E8FF;
+    }
+
+    .disappear {
+        display: none;
+    }
+
+    .container-resp {
+        width: 100%;
+        height: 50%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .texto-footer a {
+        color: white;
+        text-decoration: none;
+        font-family: 'Lato', sans-serif;
+        font-size: 26px;
+    }
+
+    .texto-footer p {
+        color: white;
+        text-decoration: none;
+        font-family: 'Lato', sans-serif;
+        font-size: 26px;
+    }
+
+    .container-redes {
+        display: none;
+    }
+
+    .container-links {
+        display: none;
+    }
+
+    .container-footer {
+        justify-content: space-between;
+        height: 600px;
+    }
+
+    .container-footer-meio-esquerda {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container-footer-meio-up-direita {
+        width: 50%;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .container-footer-meio-direita {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+    }
+
+    .separador-tablet {
+        border-left: 3px solid #FFFFFF;
+    }
+
+    .disappear-576 {
+        display: none;
+    }
+    
+    a.separador:nth-child(6) {
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+
+    .bg-footer {
+        height: 650px;
+    }
+
+    a.separador:nth-child(8) {
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+
+    a.separador:nth-child(9) {
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+
+    a.separador:nth-child(8) {
+        border-left-width: 0px;
+       }
+       
+       
+       
+}
+
+/* Dispositivos medianos (tablets, 768px e acima) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .posicionamento-navbar{
+        display: none;
+    }       
+
+    .sup {
+        height: 110px;
+        border-bottom-width: none;
+        border-bottom-style: none;
+        border-bottom-color: none;
+    }
+    
+    .barra-de-busca {
+        display: none;
+    }
+    
+    .login-desktop {
+        display: none;
+    }
+
+    .logo-desktop {
+        display: none;
+    }
+
+    .login-tablet {
+        width: 59.64px;
+        height: 59.64px;
+    }
+
+    .logo-celular {
+        display: none;
+    }
+
+    .login-celular {
+        display: none;
+    }
+
+    .navigation-menu {
+        display: block;
+    }
+
+    .banner {
+        background-image: url(../Imagens/Imagem\ Tocha-tablet.png);
+        height: 674px;
+        background-repeat: no-repeat;
+        background-size: cover; 
+    }
+
+    .container-banner {
+        align-items: center;
+    }
+
+    .back-destaque-up {
+        height: 450px;
+    }
+
+    .jogos img {
+        width: 178px;
+        height: 270px;
+    }
+
+    .back-destaque {
+        height: 50px;
+        font-size: 24px;
+        }
+
+    .back-destaque-down {
+        height: 727px;
+        background-color: #E6E8FF;
+    }
+
+    .disappear {
+        display: none;
+    }
+
+    .container-resp {
+        width: 100%;
+        height: 50%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .texto-footer a {
+        color: white;
+        text-decoration: none;
+        font-family: 'Lato', sans-serif;
+        font-size: 36px;
+    }
+
+    .texto-footer p {
+        color: white;
+        text-decoration: none;
+        font-family: 'Lato', sans-serif;
+        font-size: 36px;
+    }
+
+    .container-redes {
+        display: none;
+    }
+
+    .container-links {
+        display: none;
+    }
+
+    .container-footer {
+        justify-content: space-between;
+    }
+
+    .container-footer-meio-esquerda {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container-footer-meio-up-direita {
+        width: 50%;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .container-footer-meio-direita {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+    }
+
+    .separador-tablet {
+        border-left: 3px solid #FFFFFF;
+    }
+
+    a.separador:nth-child(10) {
+        border-left-width: 0px;
+       }
+       
+    a.separador:nth-child(8) {
+    border-left-width: 0px;
+    }
+       
+
+}
+
+/* Dispositivos grandes (desktops, 992px e acima) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+
+    .login-tablet {
+        display: none;
+    }
+    
+    .logo-tablet {
+        display: none;
+    }
+
+    .logo-celular {
+        display: none;
+    }
+
+    .menu-hamburguer {
+        display: none;
+    }
+
+    .login-celular {
+        display: none;
+    }
+
+    .jogos img {
+        width: 243px;
+        height: 360px;
+    }
+
+    .disappear-tablet {
+        display: none
+    }
+
+    .disappear-992 {
+        display: none;
+    }
+
+}
+
+@media (min-width: 1200px) {
+
+    .login-tablet {
+        display: none;
+    }
+
+    .logo-tablet {
+        display: none;
+    }
+
+    .logo-celular {
+        display: none;
+    }
+
+    .menu-hamburguer {
+        display: none;
+    }
+
+    .login-celular {
+        display: none;
+    }
+
+    .disappear-tablet {
+        display: none
+    }
+
+    .disappear-desktop {
+        display: none;
+    }
+}
+
+
+/* ----------------FINAL MEDIA QUERIES---------------- */
+
+
+
+/* código para fazer um pseudo-botão:
+
+.botao {
+    background-color: red:
+    color: white ; (da fonte)
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 15px (margem interna)
+    border-radius: 5px; (config de bordas);
+}
+
+o botão deve de ser feito com um elemento <a></a>,
+com o texto dentro do elemento e o link da página,
+
+*/
+/* para ajustes finos das posições dos elementos,
+os professores recomendam a utilização do padding
+e margin ao invés de position */
